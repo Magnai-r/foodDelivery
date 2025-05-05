@@ -8,11 +8,14 @@ import { FoodCard } from "./foodCard";
 export default function Home() {
   const fetchUsers = async () => {
     const token = localStorage.getItem("token");
-    const response = await axios.get(`http:/localhost:8000/food`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_BACKEND_ENDPOINT}/food`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
   };
 
   return (

@@ -1,3 +1,4 @@
+"use client";
 import axios from "axios";
 import { ChevronLeft } from "lucide-react";
 import { useRef } from "react";

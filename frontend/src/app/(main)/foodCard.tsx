@@ -26,7 +26,9 @@ export const FoodCard = ({ index, value }: any) => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/food");
+      const response = await axios.get(
+        `${process.env.NEXT_PUBLIC_BACKEND_ENDPOINT}/food`
+      );
       console.log(response.data.food, "FROOM FUNCTION");
 
       setFoodData(response.data.food);
@@ -38,7 +40,6 @@ export const FoodCard = ({ index, value }: any) => {
   useEffect(() => {
     fetchData();
   }, []);
-  console.log(foodData, "FROM FOOD USEFFF");
 
   return (
     <div className="flex flex-col">

@@ -23,7 +23,9 @@ export const Categories = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/category");
+      const response = await axios.get(
+        `${process.env.NEXT_PUBLIC_BACKEND_ENDPOINT}/category`
+      );
       setFoodCategoryData(response.data.categories);
     } catch (error) {
       console.error("cannot fetch data", error);

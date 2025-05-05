@@ -7,10 +7,13 @@ export const Login = ({}) => {
   const passwordRef = useRef<HTMLInputElement>(null);
 
   const handleOnClick = async () => {
-    const response = await axios.post("http://localhost:8000/login", {
-      email: emailRef.current!.value,
-      password: passwordRef.current!.value,
-    });
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_BACKEND_ENDPOINT}`,
+      {
+        email: emailRef.current!.value,
+        password: passwordRef.current!.value,
+      }
+    );
     localStorage.setItem("token", response.data.token);
   };
   return (

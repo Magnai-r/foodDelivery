@@ -1,4 +1,4 @@
-import { AuthBigImage } from "./login/AuthBigImage";
+import { AuthBigImage } from "./signup/AuthBigImage";
 
 export default function AuthLayout({
   children,

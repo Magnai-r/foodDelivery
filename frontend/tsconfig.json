@@ -27,9 +27,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/(auth)/login/.components/AuthBigImage.tsx",
-    "src/app/(auth)/login/.components/AuthBigImage.tsx",
-    "src/app/(auth)/login/.components/AuthBigImage.tsx"
+    "src/app/(auth)/signup/.components/AuthBigImage.tsx",
+    "src/app/(auth)/signup/.components/AuthBigImage.tsx",
+    "src/app/(auth)/signup/.components/AuthBigImage.tsx"
   ],
   "exclude": ["node_modules"]
 }

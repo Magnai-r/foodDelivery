@@ -1,6 +1,18 @@
-"use client";
+import axios from "axios";
 import { ChevronLeft } from "lucide-react";
-export const LoginEmail = ({}) => {
+import { useRef } from "react";
+export const Login = ({}) => {
+  const emailRef = useRef();
+  const passwordRef = useRef();
+
+  const handleOnClick = async () => {
+    const response = await axios.post("http://localhost:8000/login", {
+      email: emailRef.current.value,
+      password: passwordRef.current.value,
+    });
+    localStorage.setItem("token", response.data.token);
+  };
+  localStorage.clear();
   return (
     <div className=" flex w-104 flex-col justify-center items-start gap-6">
       <button className="flex items-start border-solid rounded-md size-9 border-[#E4E4E7]">
@@ -15,6 +27,7 @@ export const LoginEmail = ({}) => {
         </p>
       </div>
       <input
+        ref={emailRef}
         className="flex w-full"
         type="text"
         placeholder="Enter your email address"
